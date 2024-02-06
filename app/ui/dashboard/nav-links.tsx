@@ -8,6 +8,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import styled from 'styled-components';
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
@@ -24,7 +25,7 @@ const links = [
 export default function NavLinks() {
   const pathName = usePathname();
   return (
-    <>
+    <NavLinksContainer>
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
@@ -43,6 +44,14 @@ export default function NavLinks() {
           </Link>
         );
       })}
-    </>
+    </NavLinksContainer>
   );
 }
+
+const NavLinksContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+`;

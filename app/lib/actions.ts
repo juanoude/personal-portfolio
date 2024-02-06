@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 
 // This is temporary until @types/react-dom is updated
@@ -102,6 +102,21 @@ export async function updateInvoice(
   redirect('/dashboard/invoices');
 }
 
+export async function deleteInvoice(id: string) {
+  try {
+    await sql`
+      DELETE FROM invoices
+      WHERE id = ${id}
+    `;
+
+    revalidatePath('/dashboard/invoices');
+    return { message: 'Deleted Invoice.' };
+  } catch(e) {
+    console.error(e);
+    return { message: 'Database Error: Failed to Delete Invoice.' };
+  }
+}
+
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
@@ -119,4 +134,8 @@ export async function authenticate(
     }
     throw error;
   }
+}
+
+export async function signOutAction() {
+  await signOut();
 }

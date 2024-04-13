@@ -1,4 +1,4 @@
-import AcmeLogo from '@/app/ui/portfolio-logo';
+import AcmeLogo from '@/app/ui/nav-bar';
 import LoginForm from '@/app/ui/login-form';
  
 export default function LoginPage() {

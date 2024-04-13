@@ -8,8 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Juan Ananda's Portfolio",
     default: "Juan Ananda's Portfolio",
   },
-  description: 'The official Next.js Learn Dashboard built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  description: 'This is the Juan Ananda Developer Portfolio.',
 };
 
 export default function RootLayout({

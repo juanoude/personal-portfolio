@@ -1,4 +1,4 @@
-import AcmeLogo from '@/app/ui/portfolio-logo';
+import PortfolioNavbar from './ui/nav-bar'; '@/app/ui/portfolio-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import styles from '@/app/ui/home.module.css';
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <main>
       <div>
-        <AcmeLogo />
+        <PortfolioNavbar />
       </div>
       <div>
         <div>

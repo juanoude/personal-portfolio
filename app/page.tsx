@@ -1,9 +1,9 @@
 import PortfolioNavbar from './ui/nav-bar'; '@/app/ui/portfolio-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import styles from '@/app/ui/home.module.css';
 import { lusitana } from './ui/fonts';
 import Image from 'next/image';
+import HeroBanner from './ui/home/hero-banner';
 
 export default function Page() {
   return (
@@ -13,16 +13,8 @@ export default function Page() {
       </div>
       <div>
         <div>
-          <div className={styles.shape} />
-          <p
-            className={`${lusitana}`}
-          >
-            <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/">
-              Next.js Learn Course
-            </a>
-            , brought to you by Vercel.
-          </p>
+          <HeroBanner />
+
           <Link href="/login">
             <span>Log in</span> <ArrowRightIcon  />
           </Link>

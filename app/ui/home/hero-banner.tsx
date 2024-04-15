@@ -3,6 +3,8 @@
 import { heebo, kalam } from '@/app/ui/fonts';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { DocumentTextIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { CustomButton } from '../components/custom-button';
 
 export default function HeroBanner() {
   return (
@@ -14,8 +16,14 @@ export default function HeroBanner() {
         <HeroSubTitle>Full-Stack developer and innovation enthusiast</HeroSubTitle>
         <HeroText>Over 4 years of experience in the tech industry. I specialize in building innovative web and mobile applications using technologies such as React, React Native, and Node.js.</HeroText>
         <ButtonsContainer>
-          <HeroBtn>My Resume</HeroBtn>
-          <HeroBtn>Get in touch</HeroBtn>
+          <CustomButton type="secondary">
+            <DocumentTextIcon style={{ marginRight: "8px" }} width={20} height={20} />
+            <span style={{ whiteSpace: 'nowrap'}}>My Resume</span>
+          </CustomButton>
+          <CustomButton type="primary">
+            Get in touch
+            <ArrowRightIcon style={{ marginLeft: "8px"}} width={20} height={20} />
+          </CustomButton>
         </ButtonsContainer>
       </div>
 
@@ -62,8 +70,4 @@ const HeroText = styled.p`
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-const HeroBtn = styled.button`
-
 `;
